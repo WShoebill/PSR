@@ -1,4 +1,34 @@
 from random import choice
 options = ["paper", "scissors", "rock"]
 user_option = input("Please enter p, s, or r: ").lower()
-print(choice(options))
+user_score = 0
+user_scored = False
+machine_option = choice(options)
+machine_score = 0
+
+if user_option == "p":
+    print("You chose paper")
+elif user_option == "s":
+    print("You chose scissors")
+elif user_option == "r":
+    print("You chose rock")
+else:
+    print("Please enter p, s, or r only")
+print("I chose " + machine_option)
+
+if  user_option == machine_option[0]:
+    print("Nobody scored")
+elif user_option[0] == "p" and machine_option == "r":
+    user_scored = True
+elif user_option[0] == "r" and machine_option == "s":
+    user_scored = True
+elif user_option[0] == "s" and machine_option == "p":
+    user_scored = True
+else:
+    print("I scored")
+    machine_score += 1
+
+if user_scored == True:
+    print("You scored")
+    user_score += 1
+
