@@ -1,0 +1,4 @@
+from random import choice
+options = ["paper", "scissors", "rock"]
+user_option = input("Please enter p, s, or r: ").lower()
+print(choice(options))
